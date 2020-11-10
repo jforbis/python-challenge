@@ -24,12 +24,11 @@ with open(csvpath) as csvfile:
     print("----------------------------")
     #calculate number of months
     print("Total Months: ", len(date))
+    #this for loop is saying, 'for every row in the column of profit loss, change each value to an integer'
     for i in range(0,len(profit_loss)):
         profit_loss[i] = int(profit_loss[i])
-    print(sum(profit_loss))
     #sum calculation to add profit_loss column in file (should equal 38,382,578)
-    #do calculations here on the data 
-    #calculate total for profit_loss column
+    print(sum(profit_loss))
     #calculate average change (add everything up then divide by row count)
     #Greatest increase in profits (list month and amount)
     #greatest decrease in profits (list month and amount)
