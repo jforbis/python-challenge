@@ -8,6 +8,7 @@ csvpath = os.path.join('Resources','budget_data.csv')
 # Specifying how to open and read the file.
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader)
     
     date = []
     profit_loss = []
@@ -17,16 +18,17 @@ with open(csvpath) as csvfile:
         date.append(row[0])
         #grab floater value from profit_loss and store in list
         profit_loss.append(row[1])
+
     #print outputs
     print("Financial Analysis")
     print("----------------------------")
+    #calculate number of months
     print("Total Months: ", len(date))
+    for i in range(0,len(profit_loss)):
+        profit_loss[i] = int(profit_loss[i])
+    print(sum(profit_loss))
     #sum calculation to add profit_loss column in file (should equal 38,382,578)
-    total = int(sum(profit_loss))
-    print(total)
-
     #do calculations here on the data 
-    #calculate number of months *try count row*
     #calculate total for profit_loss column
     #calculate average change (add everything up then divide by row count)
     #Greatest increase in profits (list month and amount)
@@ -38,4 +40,4 @@ with open(csvpath) as csvfile:
 #with open(fileoutput, "w", newline=" ") as datafile:
 #   writer = csv.writer(datafile)
 #   writer.writerow(...list out data column headers...)
-#   writer.writerows(...variable for your zipped list...)
+#   writer.writerows(...variable for your zipped list...)uuuuuu
