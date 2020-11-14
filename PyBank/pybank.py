@@ -74,5 +74,9 @@ with open(csvpath) as csvfile:
 output_path = os.path.join("output", "budget_analysis.csv")
 with open(output_path, 'w', newline="") as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',')
-    csvwriter.writerow(["date", "profit_loss", "average_changes"])
-    csvwriter.writerows(z)
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["Total Months:", len(date)])
+    csvwriter.writerow(["Total:", x])
+    csvwriter.writerow(["Average Change:", avg_rate_change])
+    csvwriter.writerow(["Greatest Increase in Profits:",(z[(average_changes.index(max_change))+1][0]), max_change])
+    csvwriter.writerow(["Greatest Decrease in Profits:",(z[(average_changes.index(min_change))+1][0]), min_change])
